@@ -34,8 +34,9 @@ app.get("/", function(req,res){
     res.redirect("/blogs")
 })
 
-
+// INDEX ROUTE
 app.get("/blogs", function(req,res){
+    // list all blogs
     Blog.find({}, function(err, foundBlogs){
         if(err){
             console.log(err)
@@ -44,6 +45,27 @@ app.get("/blogs", function(req,res){
         }
     })
 
+})
+
+// NEW ROUTE
+app.get("/blogs/new", function(req, res){
+    // show new blog form
+    res.render("new")
+})
+
+// CREATE ROUTE
+app.post("/blogs", function(req, res){
+    // create a new blog
+    // create(data, callback)
+    Blog.create(req.body.blog, function(err, newBlog){
+        if (err){
+            res.render('new')
+        } else { 
+   // redirect
+            res.redirect("/blogs")
+        }
+  })
+    
 })
 
 
