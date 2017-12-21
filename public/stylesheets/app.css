@@ -5,3 +5,16 @@ i.icon {
 .container.main { 
     margin: 7.0em;    
 }
+
+#delete { 
+    display: inline;    
+}
+
+footer { 
+    text-align: center;
+}
+
+footer i.icon{
+    font-size: 1.5em;
+    color: black;
+}

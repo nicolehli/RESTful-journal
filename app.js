@@ -85,6 +85,7 @@ app.get("/blogs/:id/edit", function(req,res){
     Blog.findById(req.params.id, function(err, foundBlog){
         if (err){
             res.redirect("/blogs")
+            console.log(err)
         } else {
             res.render("edit", {blog: foundBlog})
         }
@@ -96,6 +97,7 @@ app.put("/blogs/:id", function(req,res){
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
         if(err){
             res.redirect("/blogs")
+            console.log(err)
         } else { 
             res.redirect("/blogs/"+req.params.id)
         }
@@ -103,6 +105,17 @@ app.put("/blogs/:id", function(req,res){
 })
 
 // TODO DESTROY ROUTE
+app.delete("/blogs/:id", function(req, res){
+    // res.send("You have reached destroy route")   // for testing
+    Blog.findByIdAndRemove(req.params.id, function(err, removedBlog){
+        if(err){
+            res.redirect("/blogs")
+            console.log(err)
+        } else {
+            res.redirect("/blogs")
+        }
+    })
+})
 
 // PORT SETUP
 var port        = process.env.PORT | 3000;

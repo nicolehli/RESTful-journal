@@ -9,9 +9,13 @@
           <span>Posted on <%= blog.created.toDateString() %></span>
         </div>
         <div>
-          <p><%= blog.body %></p>
+          <p><%- blog.body %></p>
         </div>
-     
+         
+         <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+           <a class="ui blue basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+           <button class="ui red basic button">Delete</button>
+         </form>
       </div>
   </div>
 </div>
