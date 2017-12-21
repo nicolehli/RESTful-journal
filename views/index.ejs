@@ -1,13 +1,11 @@
 <% include partials/header %>
 
-<h1>Index Title Goes Here</h1>
-
 <% blogs.forEach(function(blog){ %>
     <div>
         <h2><%= blog.title %></h2>
         <img src="<%= blog.image %>">
-        <span><%= blog.created %></span>
         <P><%= blog.body %></P>
+        <span><%= blog.created %></span>
     </div>
 <% }) %>
 

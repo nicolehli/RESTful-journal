@@ -11,9 +11,9 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // MONGOOSE-MODEL CONFIG
 var blogSchema  = new mongoose.Schema({
-    title:  String,
-    image:  String,
-    body:   String,
+    title:    String,
+    body:     String,
+    image:    String,
     created: {
         type:       Date,
         default:    Date.now,
@@ -23,9 +23,9 @@ var Blog = mongoose.model("Blog", blogSchema)
 
 // Test Blog
 // Blog.create({
-//     title:  "Test Blog",
-//     image:  "https://images.pexels.com/photos/176381/pexels-photo-176381.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
-//     body:   "Hello World, this is the blog body.",
+//     title:       "Some title First",
+//     body:        "Test Blog First",
+//     image:       "https://images.pexels.com/photos/176381/pexels-photo-176381.jpeg?w=940&h=650&auto=compress&cs=tinysrgb",
 // })
 
 // RESTFUL ROUTES
