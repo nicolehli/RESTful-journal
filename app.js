@@ -2,13 +2,15 @@ var express         = require("express"),
     app             = express(),
     bodyParser      = require("body-parser"),
     methodOverride  = require("method-override"),
-    mongoose        = require("mongoose");
+    mongoose        = require("mongoose"),
+    expressSanitizer = require("express-sanitizer");
 
 // APP CONFIG  
 mongoose.connect("mongodb://localhost/blogDB", {useMongoClient: true})
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(expressSanitizer())  // This must go after bodyParser
 app.use(methodOverride("_method"))
 
 // MONGOOSE-MODEL CONFIG
@@ -57,6 +59,14 @@ app.get("/blogs/new", function(req, res){
 
 // CREATE ROUTE
 app.post("/blogs", function(req, res){
+    // req.body is from the form
+    // blog is object we named in new.ejs form inputs
+    // and blog.body is from blog[body] from form input
+    console.log(req.body) // before sanitize
+    req.body.blog.body = req.sanitize(req.body.blog.body)
+    console.log("=============================")
+    console.log(req.body) // after sanitize
+    
     // create a new blog
     // create(data, callback)
     Blog.create(req.body.blog, function(err, newBlog){
@@ -104,7 +114,7 @@ app.put("/blogs/:id", function(req,res){
     })
 })
 
-// TODO DESTROY ROUTE
+// DESTROY ROUTE
 app.delete("/blogs/:id", function(req, res){
     // res.send("You have reached destroy route")   // for testing
     Blog.findByIdAndRemove(req.params.id, function(err, removedBlog){

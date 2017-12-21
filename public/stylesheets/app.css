@@ -1,5 +1,9 @@
+body{
+    padding: 60px;
+}
+
 i.icon { 
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .container.main { 
@@ -11,6 +15,7 @@ i.icon {
 }
 
 footer { 
+    padding-top: 20px;
     text-align: center;
 }
 
