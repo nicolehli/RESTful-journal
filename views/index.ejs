@@ -3,9 +3,13 @@
 <% blogs.forEach(function(blog){ %>
     <div>
         <h2><%= blog.title %></h2>
-        <img src="<%= blog.image %>">
-        <P><%= blog.body %></P>
-        <span><%= blog.created %></span>
+        <img src="<%= blog.image %>"><span><%= blog.created %></span>
+        <% if (blog.body.length > 100){  %>
+            <P><%= blog.body.substring(0, 100) %>...</P>
+            <a href="/blogs/<%= blog._id %>">READ MORE</a>
+        <% } else { %>
+            <P><%= blog.body %>
+        <% } %>
     </div>
 <% }) %>
 
