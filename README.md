@@ -24,8 +24,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Acknowledgments
 * This project was with The Web Developer Bootcamp (Udemy) course by Colt Steele
-* Photos are CC0 Licensed from Pexels:
-** https://www.pexels.com/photo/green-grass-field-near-houses-and-mountain-720337/
-** https://www.pexels.com/photo/red-petaled-flower-729005/
-** https://www.pexels.com/photo/grayscale-photo-of-twin-bell-alarm-clock-723675/
-** https://www.pexels.com/photo/white-and-black-concrete-building-near-body-of-water-under-gray-cloudy-sky-724184/
+#### Photos are CC0 Licensed from Pexels:
+* https://www.pexels.com/photo/green-grass-field-near-houses-and-mountain-720337/
+* https://www.pexels.com/photo/red-petaled-flower-729005/
+* https://www.pexels.com/photo/grayscale-photo-of-twin-bell-alarm-clock-723675/
+* https://www.pexels.com/photo/white-and-black-concrete-building-near-body-of-water-under-gray-cloudy-sky-724184/
