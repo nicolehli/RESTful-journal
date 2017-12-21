@@ -59,13 +59,14 @@ app.get("/blogs/new", function(req, res){
 
 // CREATE ROUTE
 app.post("/blogs", function(req, res){
-    // req.body is from the form
+    // NOTE: req.body is from the form
     // blog is object we named in new.ejs form inputs
     // and blog.body is from blog[body] from form input
-    console.log(req.body) // before sanitize
+    // -----------------------------------------------------
+    // console.log(req.body) // before sanitize
     req.body.blog.body = req.sanitize(req.body.blog.body)
-    console.log("=============================")
-    console.log(req.body) // after sanitize
+    // console.log("=============================")
+    // console.log(req.body) // after sanitize
     
     // create a new blog
     // create(data, callback)
@@ -104,6 +105,7 @@ app.get("/blogs/:id/edit", function(req,res){
 
 // UPDATE ROUTE
 app.put("/blogs/:id", function(req,res){
+    req.body.blog.body = req.sanitize(req.body.blog.body)
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
         if(err){
             res.redirect("/blogs")

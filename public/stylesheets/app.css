@@ -1,5 +1,5 @@
 body{
-    padding: 60px;
+    padding: 20px;
 }
 
 i.icon { 
@@ -7,7 +7,7 @@ i.icon {
 }
 
 .container.main { 
-    margin: 7.0em;    
+    margin: 5.0em;    
 }
 
 #delete { 
@@ -15,7 +15,8 @@ i.icon {
 }
 
 footer { 
-    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 10px;
     text-align: center;
 }
 
