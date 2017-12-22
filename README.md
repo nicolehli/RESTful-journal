@@ -1,9 +1,14 @@
 # RESTful Journal
 A blog site using RESTful routing, Semantic UI for frontend, and NodeJS with MongoDB in the backend.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+#### What does this do?
+* User can create new post
+* User can edit existing post
+* User can delete a post
+* User can see past posts along with a thumbnail, a snippet and a creation timestamp
+* User can format content with HTML and the content gets sanitized 
+* User will have their data stored in a database
+* User can view contents in responsive mobile resolutions
 
 ### Installing
 * Run ```npm install``` to install all essential packages
@@ -23,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 
 ## Acknowledgments
-* This project was with The Web Developer Bootcamp (Udemy) course by Colt Steele
+* This project was completed with The Web Developer Bootcamp (Udemy) course by Colt Steele
 #### Photos are CC0 Licensed from Pexels:
 * https://www.pexels.com/photo/green-grass-field-near-houses-and-mountain-720337/
 * https://www.pexels.com/photo/red-petaled-flower-729005/
